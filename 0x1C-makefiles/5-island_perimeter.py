@@ -5,7 +5,7 @@ Module for island_perimeter()
 
 def island_perimeter(grid):
     """
-    Provides the results of  the length of an island perimeter
+    Provides the results of the length of an island perimeter
     """
     perimeter = 0
     for row_index, row in enumerate(grid):
@@ -20,3 +20,4 @@ def island_perimeter(grid):
                 if col_index == len(row) - 1 or grid[row_index][col_index + 1] == 0:
                     perimeter += 1
     return perimeter
+
