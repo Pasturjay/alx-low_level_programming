@@ -2,7 +2,7 @@
 """
 5-main
 """
-island_perimeter = __import__('5-island_perimeter').island_perimeter
+from 5-island_perimeter import island_perimeter
 
 if __name__ == "__main__":
     grid = [
@@ -13,3 +13,4 @@ if __name__ == "__main__":
         [0, 0, 0, 0, 0, 0]
     ]
     print(island_perimeter(grid))
+
