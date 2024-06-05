@@ -1,4 +1,4 @@
-
+RM = rm -f
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
