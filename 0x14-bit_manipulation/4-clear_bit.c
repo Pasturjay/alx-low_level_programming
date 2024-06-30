@@ -1,25 +1,15 @@
 #include "main.h"
-
+#include <stdlib.h>
 /**
- * clear_bit - convert real number to binary.
- * @n: is the integer
- * @index: the lenght of the integer.
- *
- * Return: binary.
- **/
-
-
-
-
+ * clear_bit - sets the value of a bit to 0 at a given index
+ * @n: parameter
+ * @index: index
+ * Return: 1 if works, -1 if error
+ */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int size = 8 * sizeof(unsigned long int);
-	unsigned long int i = ~(1UL << index);
-
-	if (n == NULL  || index >= size)
-	{
+	if (index > sizeof(n) * 8)
 		return (-1);
-	}
-	*n &= i;
+	*n &= ~(1 << index);
 	return (1);
 }

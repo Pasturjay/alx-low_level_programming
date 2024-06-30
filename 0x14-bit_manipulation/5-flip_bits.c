@@ -1,27 +1,25 @@
 #include "main.h"
 
-
 /**
- * flip_bits - convert real number to binary.
- * @n: is the integer
- * @m: is the second integer
+ * flip_bits - counts the number of bits to change
+ * to get from one number to another
+ * @n: first number
+ * @m: second number
  *
- * Return: binary.
- **/
-
-
+ * Return: number of bits to change
+ */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int result = n ^ m;
-	unsigned int i = 0;
+	int i, count = 0;
+	unsigned long int current;
+	unsigned long int exclusive = n ^ m;
 
-	while (result != 0)
+	for (i = 63; i >= 0; i--)
 	{
-		if (result & 1)
-		{
-			i++;
-		}
-		result >>= 1;
+		current = exclusive >> i;
+		if (current & 1)
+			count++;
 	}
-	return (i);
+
+	return (count);
 }

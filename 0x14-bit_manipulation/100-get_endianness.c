@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
- * get_endianness - convert real number to binary.
- * Return: 0.
- **/
-
+ * get_endianness - checks the endianness
+ *
+ * Return: 0 if big endian, 1 if little endian
+ */
 int get_endianness(void)
 {
-	unsigned int k = 1;
-	char *byte = (char *)&k;
+	int x;
+	char *y;
 
-	if (*byte)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	x = 1;
+	y = (char *)&x;
+	return (*y);
 }

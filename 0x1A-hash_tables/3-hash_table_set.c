@@ -2,12 +2,14 @@
 
 /**
  * hash_table_set - Add or update an element in a hash table.
- * @ht: Pointer to the hash table.
- * @key: Key to add - cannot be an empty string.
- * @value: Value associated with key.
+ * @ht: A pointer to the hash table.
+ * @key: The key to add - cannot be an empty string.
+ * @value: The value associated with key.
  *
- * Return: On failure - 0. Otherwise - 1.
+ * Return: Upon failure - 0.
+ *         Otherwise - 1.
  */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new;
@@ -38,16 +40,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(value_copy);
 		return (0);
 	}
-
 	new->key = strdup(key);
 	if (new->key == NULL)
 	{
 		free(new);
 		return (0);
 	}
-
 	new->value = value_copy;
 	new->next = ht->array[index];
 	ht->array[index] = new;
+
 	return (1);
 }
